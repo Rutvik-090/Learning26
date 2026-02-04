@@ -1,0 +1,41 @@
+import { NavLink } from "react-router-dom";
+import Netflix_Logo from "../assets/Netflix_Logo.png";
+
+function Navbar() {
+  return (
+    <nav className="bg-black text-white px-10 py-3">
+      <div className="max-w-7xl mx-auto flex items-center gap-10">
+        <NavLink to="/home" className="shrink-0">
+          <img
+            src={Netflix_Logo}
+            alt="Netflix"
+            className="h-14 w-auto object-contain"
+          />
+        </NavLink>
+
+        <ul className="flex gap-6 text-md font-medium">
+          {["Home", "Movies", "Shows", "Trending", "News"].map((item) => (
+            <li key={item}>
+              <NavLink
+                to={`/${item.toLowerCase()}`}
+                className={({ isActive }) =>
+                  `transition ${
+                    isActive ? "text-white" : "text-gray-300 hover:text-white"
+                  }`
+                }
+              >
+                {item}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        <div className="ml-auto flex items-center gap-6">
+          {/* Placeholder for future: Search, Profile, Notifications */}
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;

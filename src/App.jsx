@@ -1,16 +1,31 @@
-import MapDemo3 from "./components/Map/MapDemo3";
-import { MapDemo4 } from "./components/Map/MapDemo4";
-import { MapDemo5 } from "./components/Map/MapDemo5";
+import { Route, Routes } from "react-router-dom";
+import Error from "./components/Error";
+import Home from "./components/Home";
+import Movies from "./components/Movies";
+import Navbar from "./components/Navbar";
+import News from "./components/News";
+import Shows from "./components/Shows";
+import Trending from "./components/Trending";
+import Watch from "./components/Watch";
 
 const App = () => {
   return (
     <div>
-      {/* <MapDemo1 />
-      <MapDemo2 /> */}
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <MapDemo3 />
-      <MapDemo4 />
-      <MapDemo5 />
+        <Route path="/home" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/shows" element={<Shows />} />
+        <Route path="/trending" element={<Trending />} />
+        <Route path="/news" element={<News />} />
+
+        <Route path="/watch/:movieName" element={<Watch />} />
+        <Route path="/watch/:showName" element={<Watch />} />
+
+        <Route path="/*" element={<Error />} />
+      </Routes>
     </div>
   );
 };
