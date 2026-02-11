@@ -4,7 +4,7 @@ import Netflix_Logo from "../assets/Netflix_Logo.png";
 function Navbar() {
   return (
     <nav className="bg-black text-white px-10 py-3">
-      <div className="max-w-7xl mx-auto flex items-center gap-10">
+      <div className="max-w-7xl flex items-center gap-10">
         <NavLink to="/home" className="shrink-0">
           <img
             src={Netflix_Logo}
@@ -28,6 +28,58 @@ function Navbar() {
               </NavLink>
             </li>
           ))}
+
+          {/* <li>
+            <NavLink
+              to="/characters"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Characters
+            </NavLink>
+          </li> */}
+
+          <li>
+            <NavLink
+              to="/teams"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Teams
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/functiondemo"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Function Demo 1
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/inputhandling"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Input Handling
+            </NavLink>
+          </li>
         </ul>
 
         <div className="ml-auto flex items-center gap-6">

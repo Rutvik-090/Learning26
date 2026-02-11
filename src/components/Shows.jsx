@@ -6,7 +6,7 @@ const Shows = () => {
     { showName: "Stranger Things" },
     { showName: "Money Heist" },
     { showName: "Dark" },
-    { showName: "The Boys" },
+    { showName: "The Umbrella Academy" },
   ];
 
   return (
