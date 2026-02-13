@@ -2,12 +2,37 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 function FormDemo4() {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const [formData, setFormData] = useState(null);
 
   const onSubmit = (data) => {
     console.log(data);
     setFormData(data);
+  };
+
+  const validationRules = {
+    nameValidator: {
+      required: {
+        value: true,
+        message: "Name is required",
+      },
+    },
+
+    emailValidator: {
+      required: {
+        value: true,
+        message: "Email is required",
+      },
+      pattern: {
+        value: /^\S+@\S+$/i,
+        message: "Invalid email address",
+      },
+    },
   };
 
   return (
@@ -23,16 +48,22 @@ function FormDemo4() {
         <input
           type="text"
           placeholder="Your Name"
-          {...register("name")}
+          {...register("name", validationRules.nameValidator)}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
         />
+        {errors.name && (
+          <p className="text-red-500 text-sm">{errors.name.message}</p>
+        )}
 
         <input
           type="email"
           placeholder="Your Email"
-          {...register("email")}
+          {...register("email", validationRules.emailValidator)}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
         />
+        {errors.email && (
+          <p className="text-red-500 text-sm">{errors.email.message}</p>
+        )}
 
         {/* Rating */}
         <div>
