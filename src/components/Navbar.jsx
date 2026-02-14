@@ -80,6 +80,19 @@ function Navbar() {
               Input Handling
             </NavLink>
           </li>
+
+          <li>
+            <NavLink
+              to="/forms"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Forms
+            </NavLink>
+          </li>
         </ul>
 
         <div className="ml-auto flex items-center gap-6">

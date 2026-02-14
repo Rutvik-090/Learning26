@@ -1,5 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import Error from "./components/Error";
+import FormDemo1 from "./components/Form/FormDemo1";
+import FormDemo2 from "./components/Form/FormDemo2";
+import FormDemo3 from "./components/Form/FormDemo3";
+import FormDemo4 from "./components/Form/FormDemo4";
+import FormDemo5 from "./components/Form/FormDemo5";
+import FormDemo6 from "./components/Form/FormDemo6";
+import FormDemo7 from "./components/Form/FormDemo7";
+import Forms from "./components/Form/Forms";
 import FunctionDemo1 from "./components/FunctionDemo1";
 import Home from "./components/Home";
 import Movies from "./components/Movies";
@@ -35,6 +43,14 @@ const App = () => {
 
         <Route path="/functiondemo" element={<FunctionDemo1 />} />
         <Route path="/inputhandling" element={<InputHandling />} />
+        <Route path="/forms" element={<Forms />} />
+        <Route path="/form" element={<FormDemo1 />} />
+        <Route path="/form1" element={<FormDemo2 />} />
+        <Route path="/form2" element={<FormDemo3 />} />
+        <Route path="/form3" element={<FormDemo4 />} />
+        <Route path="/form4" element={<FormDemo5 />} />
+        <Route path="/form5" element={<FormDemo6 />} />
+        <Route path="/form6" element={<FormDemo7 />} />
 
         <Route path="/*" element={<Error />} />
       </Routes>

@@ -1,45 +1,4 @@
-// import { useState } from "react";
 
-// function InputHandling() {
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   return (
-//     <div>
-//       <input
-//         type="text"
-//         placeholder="Name"
-//         onChange={(e) => setName(e.target.value)}
-//       />
-//       {name}
-
-//       <input
-//         type="text"
-//         placeholder="E-mail"
-//         onChange={(e) => setEmail(e.target.value)}
-//       />
-
-//       {email}
-
-//       <input
-//         type="text"
-//         placeholder="Password"
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-
-//       {password}
-
-//       <input type="text" placeholder="City" />
-//       <input type="text" placeholder="Country" />
-//       <input type="text" placeholder="Age" />
-//       <input type="text" placeholder="Hobby" />
-//       <input type="text" placeholder="Bio" />
-//     </div>
-//   );
-// }
-
-// export default InputHandling;
 
 import { useState } from "react";
 

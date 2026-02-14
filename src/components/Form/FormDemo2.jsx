@@ -68,7 +68,7 @@ function FormDemo2() {
 
       {/* Display Submitted Data */}
       {formData && (
-        <div className="bg-white p-6 rounded-xl shadow-md w-[420px]">
+        <div className="bg-white p-6 rounded-xl shadow-md w-105">
           <h3 className="text-lg font-bold mb-3 text-gray-700">
             Submitted Profile
           </h3>
