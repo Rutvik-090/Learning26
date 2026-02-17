@@ -14,7 +14,7 @@ function FormDemo3() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 gap-8">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded-2xl shadow-xl w-[420px] space-y-5"
+        className="bg-white p-8 rounded-2xl shadow-xl w-105 space-y-5"
       >
         <h2 className="text-2xl font-bold text-center text-gray-700">
           Job Application
@@ -88,7 +88,7 @@ function FormDemo3() {
 
       {/* Display Submitted Data */}
       {formData && (
-        <div className="bg-white p-6 rounded-xl shadow-md w-[420px]">
+        <div className="bg-white p-6 rounded-xl shadow-md w-105">
           <h3 className="text-lg font-bold mb-3 text-gray-700">
             Application Summary
           </h3>

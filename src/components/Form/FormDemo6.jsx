@@ -73,7 +73,7 @@ function FormDemo6() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200 p-6">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-100 to-indigo-200 p-6">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="bg-white w-full max-w-2xl p-8 rounded-2xl shadow-xl space-y-6"

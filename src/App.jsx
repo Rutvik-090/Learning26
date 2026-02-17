@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import ApiDemo from "./components/API/ApiDemo";
 import Error from "./components/Error";
 import FormDemo1 from "./components/Form/FormDemo1";
 import FormDemo2 from "./components/Form/FormDemo2";
@@ -51,6 +52,8 @@ const App = () => {
         <Route path="/form4" element={<FormDemo5 />} />
         <Route path="/form5" element={<FormDemo6 />} />
         <Route path="/form6" element={<FormDemo7 />} />
+
+        <Route path="/api" element={<ApiDemo />} />
 
         <Route path="/*" element={<Error />} />
       </Routes>
