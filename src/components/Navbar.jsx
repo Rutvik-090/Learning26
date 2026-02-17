@@ -106,6 +106,32 @@ function Navbar() {
               API Demo
             </NavLink>
           </li>
+
+          <li>
+            <NavLink
+              to="/api-task-1"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              API Task 1
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/api-task-2"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              API Task 2
+            </NavLink>
+          </li>
         </ul>
 
         <div className="ml-auto flex items-center gap-6">
