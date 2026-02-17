@@ -14,60 +14,74 @@ export const ApiTask2 = () => {
       const response = await axios.get("https://dummyjson.com/comments");
       setComments(response.data.comments);
     } catch (err) {
-      setError("Failed to fetch comments.");
-      console.error(err);
+      setError("Unable to fetch comments. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div className="min-h-screen bg-linear-to-br from-indigo-100 via-purple-100 to-pink-100 p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-6 text-red-500">
-          API Task 2 – Comments
+        <h1 className="text-3xl font-semibold text-gray-800 text-center mb-8">
+          Comments Overview
         </h1>
 
-        <div className="text-center mb-6">
+        <div className="text-center mb-8">
           <button
             onClick={getComments}
             disabled={loading}
-            className="bg-blue-600 px-6 py-2 rounded hover:bg-blue-700 transition disabled:bg-gray-600"
+            className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition disabled:opacity-50"
           >
-            {loading ? "Loading..." : "Get Comments"}
+            {loading ? "Fetching..." : "Load Comments"}
           </button>
         </div>
 
-        {error && <p className="text-center text-red-400 mb-4">{error}</p>}
+        {error && (
+          <p className="text-center text-red-500 font-medium mb-6">{error}</p>
+        )}
 
         {comments.length > 0 && (
-          <div className="overflow-x-auto">
-            <table className="w-full bg-gray-800 rounded-lg overflow-hidden">
-              <thead className="bg-gray-700">
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+            <table className="w-full">
+              <thead className="bg-gray-100 text-gray-600 text-sm uppercase tracking-wide">
                 <tr>
-                  <th className="p-3 text-left">ID</th>
-                  <th className="p-3 text-left">Body</th>
-                  <th className="p-3 text-left">Post ID</th>
-                  <th className="p-3 text-left">Likes</th>
-                  <th className="p-3 text-left">User ID</th>
-                  <th className="p-3 text-left">Username</th>
-                  <th className="p-3 text-left">Full Name</th>
+                  <th className="p-4 text-left">ID</th>
+                  <th className="p-4 text-left">Comment</th>
+                  <th className="p-4 text-left">Post</th>
+                  <th className="p-4 text-left">Likes</th>
+                  <th className="p-4 text-left">User</th>
                 </tr>
               </thead>
 
-              <tbody>
+              <tbody className="text-gray-700">
                 {comments.map((comment) => (
                   <tr
                     key={comment.id}
-                    className="border-t border-gray-700 hover:bg-gray-700 transition"
+                    className="border-t hover:bg-gray-50 transition"
                   >
-                    <td className="p-3">{comment.id}</td>
-                    <td className="p-3 max-w-xs truncate">{comment.body}</td>
-                    <td className="p-3">{comment.postId}</td>
-                    <td className="p-3 text-yellow-400">{comment.likes}</td>
-                    <td className="p-3">{comment.user.id}</td>
-                    <td className="p-3">{comment.user.username}</td>
-                    <td className="p-3">{comment.user.fullName}</td>
+                    <td className="p-4">{comment.id}</td>
+
+                    <td className="p-4 max-w-md">
+                      <p className="truncate">{comment.body}</p>
+                    </td>
+
+                    <td className="p-4">{comment.postId}</td>
+
+                    <td className="p-4 text-blue-600 font-medium">
+                      {comment.likes}
+                    </td>
+
+                    <td className="p-4">
+                      <div className="flex flex-col">
+                        <span className="font-medium">
+                          {comment.user.username}
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {comment.user.fullName}
+                        </span>
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
