@@ -145,6 +145,19 @@ function Navbar() {
               Movie List
             </NavLink>
           </li>
+
+          <li>
+            <NavLink
+              to="/movie-search"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Movie Search
+            </NavLink>
+          </li>
         </ul>
 
         <div className="ml-auto flex items-center gap-6">
