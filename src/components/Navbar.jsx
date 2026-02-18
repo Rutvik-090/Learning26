@@ -158,6 +158,19 @@ function Navbar() {
               Movie Search
             </NavLink>
           </li>
+
+          <li>
+            <NavLink
+              to="/submit-data"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Post Api
+            </NavLink>
+          </li>
         </ul>
 
         <div className="ml-auto flex items-center gap-6">

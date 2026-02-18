@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import ApiDemo from "./components/API/ApiDemo";
 import { ApiTask1 } from "./components/API/ApiTask1";
 import { ApiTask2 } from "./components/API/ApiTask2";
+import ApiTask3 from "./components/API/ApiTask3";
 import MovieDetails from "./components/API/MovieDetails";
 import MovieSearch from "./components/API/MovieSearch";
 import OmdbList from "./components/API/OmdbList";
@@ -64,6 +65,8 @@ const App = () => {
         <Route path="/movie-list" element={<OmdbList />} />
         <Route path="/movie-search" element={<MovieSearch />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
+
+        <Route path="submit-data" element={<ApiTask3 />} />
 
         <Route path="/*" element={<Error />} />
       </Routes>

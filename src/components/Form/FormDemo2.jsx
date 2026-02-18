@@ -11,10 +11,10 @@ function FormDemo2() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-100 to-blue-100 gap-8">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-br from-purple-100 to-blue-100 gap-8">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded-2xl shadow-xl w-[420px] space-y-5"
+        className="bg-white p-8 rounded-2xl shadow-xl w-105 space-y-5"
       >
         <h2 className="text-2xl font-bold text-center text-gray-700">
           Profile Information
