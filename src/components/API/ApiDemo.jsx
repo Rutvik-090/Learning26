@@ -3,16 +3,17 @@ import { useState } from "react";
 
 function ApiDemo() {
   const [loading, setLoading] = useState(false);
-  const [posts, setPosts] = useState([]);
+  const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
 
-  const getUser = async () => {
+  const getUsers = async () => {
     try {
       setLoading(true);
       setError(null);
 
-      const res = await axios.get("https://dummyjson.com/posts");
-      setPosts(res.data.posts);
+      const res = await axios.get("https://node5.onrender.com/user/user/");
+
+      setUsers(res.data.data);
     } catch (err) {
       setError("Failed to fetch data. Please try again.");
       console.error(err);
@@ -23,17 +24,17 @@ function ApiDemo() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl font-semibold mb-6 text-center">
-          API Demo – Posts
+          API Demo – Users
         </h1>
 
         <div className="text-center mb-6">
           <button
-            onClick={getUser}
+            onClick={getUsers}
             className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition"
           >
-            Fetch Data
+            Fetch Users
           </button>
         </div>
 
@@ -45,18 +46,42 @@ function ApiDemo() {
           <p className="text-center text-red-600 font-medium">{error}</p>
         )}
 
-        {!loading && !error && posts.length > 0 && (
+        {!loading && !error && users.length > 0 && (
           <div className="grid md:grid-cols-2 gap-6">
-            {posts.map((post) => (
+            {users.map((user) => (
               <div
-                key={post.id}
+                key={user._id}
                 className="bg-white p-5 rounded-lg shadow hover:shadow-md transition"
               >
-                <h2 className="text-lg font-semibold mb-2">{post.title}</h2>
-                <p className="text-gray-600 text-sm">{post.body}</p>
+                <h2 className="text-xl font-semibold mb-3">{user.name}</h2>
+
+                <div className="space-y-1 text-sm text-gray-700">
+                  <p>
+                    <strong>ID:</strong> {user._id}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {user.email}
+                  </p>
+                  <p>
+                    <strong>Age:</strong> {user.age}
+                  </p>
+                  <p>
+                    <strong>Status:</strong>{" "}
+                    {user.isActive ? "Active" : "Inactive"}
+                  </p>
+                  <p>
+                    <strong>Version:</strong> {user.__v}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+        )}
+
+        {!loading && !error && users.length === 0 && (
+          <p className="text-center text-gray-500">
+            No users found. Click "Fetch Users".
+          </p>
         )}
       </div>
     </div>

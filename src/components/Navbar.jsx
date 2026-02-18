@@ -81,7 +81,7 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li>
+          {/* <li>
             <NavLink
               to="/forms"
               className={({ isActive }) =>
@@ -92,7 +92,7 @@ function Navbar() {
             >
               Forms
             </NavLink>
-          </li>
+          </li> */}
 
           <li>
             <NavLink
@@ -107,7 +107,7 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li>
+          {/* <li>
             <NavLink
               to="/api-task-1"
               className={({ isActive }) =>
@@ -130,6 +130,19 @@ function Navbar() {
               }
             >
               API Task 2
+            </NavLink>
+          </li> */}
+
+          <li>
+            <NavLink
+              to="/movie-list"
+              className={({ isActive }) =>
+                `transition ${
+                  isActive ? "text-white" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              Movie List
             </NavLink>
           </li>
         </ul>

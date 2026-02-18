@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import ApiDemo from "./components/API/ApiDemo";
 import { ApiTask1 } from "./components/API/ApiTask1";
 import { ApiTask2 } from "./components/API/ApiTask2";
+import OmdbList from "./components/API/OmdbList";
 import Error from "./components/Error";
 import FormDemo1 from "./components/Form/FormDemo1";
 import FormDemo2 from "./components/Form/FormDemo2";
@@ -58,6 +59,7 @@ const App = () => {
         <Route path="/api" element={<ApiDemo />} />
         <Route path="/api-task-1" element={<ApiTask1 />} />
         <Route path="/api-task-2" element={<ApiTask2 />} />
+        <Route path="/movie-list" element={<OmdbList />} />
 
         <Route path="/*" element={<Error />} />
       </Routes>
